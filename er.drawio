@@ -280,7 +280,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="89" value="DomesticVideos（国内の動画）" style="shape=table;startSize=45;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;pointerEvents=1;fontSize=14;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="-120" y="800" width="240" height="351" as="geometry"/>
+                    <mxGeometry x="-120" y="800" width="240" height="309" as="geometry"/>
                 </mxCell>
                 <mxCell id="136" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=1;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="89" vertex="1">
                     <mxGeometry y="45" width="240" height="45" as="geometry"/>
@@ -347,21 +347,8 @@
                         <mxRectangle width="180" height="42" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="108" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=1;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="89" vertex="1">
-                    <mxGeometry y="264" width="240" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="109" value="&lt;span style=&quot;font-weight: 700&quot;&gt;FK&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;" parent="108" vertex="1">
-                    <mxGeometry width="60" height="42" as="geometry">
-                        <mxRectangle width="60" height="42" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="110" value="&lt;span style=&quot;text-align: center;&quot;&gt;prefecture&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;_id&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;pointerEvents=1;fontSize=14;fontStyle=1" parent="108" vertex="1">
-                    <mxGeometry x="60" width="180" height="42" as="geometry">
-                        <mxRectangle width="180" height="42" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="111" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=1;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="89" vertex="1">
-                    <mxGeometry y="306" width="240" height="42" as="geometry"/>
+                    <mxGeometry y="264" width="240" height="42" as="geometry"/>
                 </mxCell>
                 <mxCell id="112" value="&lt;span style=&quot;font-weight: 700&quot;&gt;FK&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;" parent="111" vertex="1">
                     <mxGeometry width="60" height="42" as="geometry">
@@ -374,7 +361,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="114" value="ForeignVideos（海外の動画）" style="shape=table;startSize=45;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;pointerEvents=1;fontSize=14;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="-120" y="-70" width="240" height="351" as="geometry"/>
+                    <mxGeometry x="-120" y="-70" width="240" height="309" as="geometry"/>
                 </mxCell>
                 <mxCell id="115" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=1;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="114" vertex="1">
                     <mxGeometry y="45" width="240" height="45" as="geometry"/>
@@ -441,21 +428,8 @@
                         <mxRectangle width="180" height="42" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="130" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=1;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="114" vertex="1">
-                    <mxGeometry y="264" width="240" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="131" value="&lt;span style=&quot;font-weight: 700&quot;&gt;FK&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;" parent="130" vertex="1">
-                    <mxGeometry width="60" height="42" as="geometry">
-                        <mxRectangle width="60" height="42" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="132" value="&lt;span style=&quot;text-align: center&quot;&gt;country_id&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;pointerEvents=1;fontSize=14;fontStyle=1" parent="130" vertex="1">
-                    <mxGeometry x="60" width="180" height="42" as="geometry">
-                        <mxRectangle width="180" height="42" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="133" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=1;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="114" vertex="1">
-                    <mxGeometry y="306" width="240" height="42" as="geometry"/>
+                    <mxGeometry y="264" width="240" height="42" as="geometry"/>
                 </mxCell>
                 <mxCell id="134" value="&lt;span style=&quot;font-weight: 700&quot;&gt;FK&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;" parent="133" vertex="1">
                     <mxGeometry width="60" height="42" as="geometry">
