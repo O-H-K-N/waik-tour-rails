@@ -25,6 +25,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+gem 'google-api-client', '~> 0.11'
+gem 'seed-fu'
+
 group :development, :test do
   #Debugger
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
