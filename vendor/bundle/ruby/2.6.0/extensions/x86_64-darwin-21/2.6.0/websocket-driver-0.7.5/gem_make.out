@@ -1,0 +1,15 @@
+current directory: /Users/kento_otsuka/PF/waik-tour-rails/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/kento_otsuka/.rbenv/versions/2.6.6/bin/ruby -I /Users/kento_otsuka/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20220624-57900-1xzljul.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kento_otsuka/PF/waik-tour-rails/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/kento_otsuka/PF/waik-tour-rails/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/kento_otsuka/PF/waik-tour-rails/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20220624-57900-4xxi7k
