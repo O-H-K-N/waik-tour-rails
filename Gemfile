@@ -26,13 +26,15 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rack-cors'
 
 gem 'google-api-client', '~> 0.11'
+gem 'sorcery'
 gem 'seed-fu'
 
 group :development, :test do
   #Debugger
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-doc'
   gem 'pry-rails'
 
   # Test

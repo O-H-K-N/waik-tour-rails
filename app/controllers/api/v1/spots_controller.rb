@@ -1,4 +1,4 @@
-class Api::V1::SpotsController < ApplicationController
+class Api::V1::SpotsController < ApiController
   # 国に紐づくスポット一覧を返す
   def index
     country = Country.find(params[:country_id])
