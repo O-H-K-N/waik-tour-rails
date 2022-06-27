@@ -1,0 +1,44 @@
+<% content_for(:title, t('.title', id: @video.id, video_id: @video.video_id)) %>
+<div class="p-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title', id: @video.id, video_id: @video.video_id) %></h1>
+      <div class="text-right mb-3">
+				<!-- ユーザ削除のリンク -->
+        <%= link_to t('defaults.delete'), admin_video_path(@video), method: :delete, data: { confirm: t('admin.videos.delete_confirm', id: @video.id, video_id: @video.video_id) }, class: 'btn btn-danger' %>
+      </div>
+      <table class="table table-bordered bg-white">
+        <tr>
+          <th scope="row"><%= Video.human_attribute_name(:id) %></th>
+          <td><%= @video.id %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Video.human_attribute_name(:area) %></th>
+          <td><%= @video.area %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Video.human_attribute_name(:spot) %></th>
+          <td><%= @video.spot %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Video.human_attribute_name(:video_id) %></th>
+          <td><%= @video.video_id %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Video.human_attribute_name(:title) %></th>
+          <td><%= @video.title %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Video.human_attribute_name(:thumbnail) %></th>
+          <td>
+            <iframe width="560" height="315" src="http://www.youtube.com/embed/<%= @video.video_id %>" encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Video.human_attribute_name(:view_count) %></th>
+          <td><%= @video.view_count %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

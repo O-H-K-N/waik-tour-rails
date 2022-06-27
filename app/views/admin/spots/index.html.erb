@@ -1,0 +1,42 @@
+<% content_for(:title, t('.title')) %>
+<div class="p-5">
+  <h1><%= t('.title') %></h1>
+  <div class="row">
+    <div class="col-md-9 mb-3">
+      <!-- 検索窓 -->
+      <%= render 'search_form', url: admin_spots_path %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= link_to t('defaults.new'), new_admin_spot_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+  <% if @spots.present? %>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col"><%= Spot.human_attribute_name(:id) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:country_id) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:name) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:name_ens) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:lat) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:lng) %></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- 一覧表示のフォーム -->
+          <%= render partial: "spot", collection: @spots %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- ページネーション -->
+        <%= paginate @spots, outer_window: 2 %>
+      </div>
+    </div>
+  <% end %>
+</div>
