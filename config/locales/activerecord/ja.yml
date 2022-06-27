@@ -1,0 +1,47 @@
+ja:
+  enums:
+    user:
+      role:
+        general: 一般
+        admin: 管理者
+  activerecord:
+    models:
+      user: ユーザ
+      country: 国
+      prefecture: 都道府県
+      spot: スポット
+      domestic_area: 国内スポット
+      video: 動画
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        role: 権限
+      country:
+        name: 国名
+        name_ens: 国名(英語表記)
+        iso: 国コード
+      prefecture:
+        name: 都道府県名
+        name_ens: 都道府県名(ローマ字表記)
+      spot:
+        country_id: 国
+        name: 地点名
+        name_ens: 地点名(英語表記)
+        lat: 緯度
+        lng: 経度
+      domestic_area:
+        prefecture_id: 都道府県
+        name: 地点名
+        name_ens: 地点名(ローマ字表記)
+        lat: 緯度
+        lng: 経度
+      video:
+        video_id: Youtube動画ID
+        area: 国/都道府県
+        spot: 地点
+        title: 動画名
+        thumbnail: サムネイル
+        view_count: 閲覧数

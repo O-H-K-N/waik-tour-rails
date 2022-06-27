@@ -9,6 +9,10 @@ gem 'rails', '~> 6.1.6'
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
+# Use SCSS for stylesheets
+gem 'sass-rails'
+gem 'font-awesome-sass', '~> 5.11.2'
+gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -28,6 +32,12 @@ gem 'rack-cors'
 gem 'google-api-client', '~> 0.11'
 gem 'sorcery'
 gem 'seed-fu'
+
+# Admin Tool
+gem 'ransack'
+gem 'kaminari'
+gem 'rails-i18n'
+gem 'enum_help'
 
 group :development, :test do
   #Debugger
