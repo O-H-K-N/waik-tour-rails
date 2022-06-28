@@ -1,0 +1,56 @@
+<% content_for(:title, t('.title', id: @country.id, name: @country.name)) %>
+<div class="p-5">
+  <div class="row mb-3">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title', id: @country.id, name: @country.name) %></h1>
+      <div class="text-right mb-3">
+				<!-- ユーザ編集画面へのリンク -->
+        <%= link_to t('defaults.edit'), edit_admin_country_path(@country), class: 'btn btn-success' %>
+				<!-- ユーザ削除のリンク -->
+        <%= link_to t('defaults.delete'), admin_country_path(@country), method: :delete, data: { confirm: t('admin.countries.delete_confirm', id: @country.id, name: @country.name) }, class: 'btn btn-danger' %>
+      </div>
+      <table class="table table-bordered bg-white">
+        <tr>
+          <th scope="row"><%= Country.human_attribute_name(:id) %></th>
+          <td><%= @country.id %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Country.human_attribute_name(:name) %></th>
+          <td><%= @country.name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Country.human_attribute_name(:name_ens) %></th>
+          <td><%= @country.name_ens %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Country.human_attribute_name(:iso) %></th>
+          <td><%= @country.iso %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <%# 国に関連づく地点を一覧で表示 %>
+  <% if @spots.present? %>
+    <h2><%= t('.spot_title')%></h2>
+    <div class="row my-2">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col"><%= Spot.human_attribute_name(:id) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:name) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:name_ens) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:lat) %></th>
+            <th scope="col"><%= Spot.human_attribute_name(:lng) %></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- 地点一覧表示のフォーム -->
+          <%= render partial: "admin/spots/spot", collection: @spots %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>

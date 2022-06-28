@@ -1,0 +1,42 @@
+<% if current_user.id == @user.id %>
+  <% content_for(:title, t('.profile')) %>
+<% else %>
+  <% content_for(:title, t('.title', id: @user.id, name: @user.name)) %>
+<% end %>
+<div class="p-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <% if current_user.id == @user.id %>
+        <h1><%= t('.profile') %></h1>
+      <% else %>
+        <h1><%= t('.title', id: @user.id, name: @user.name) %></h1>
+      <% end %>
+      <div class="text-right mb-3">
+				<!-- ユーザ編集画面へのリンク -->
+        <%= link_to t('defaults.edit'), edit_admin_user_path(@user), class: 'btn btn-success' %>
+				<!-- ユーザ削除のリンク -->
+        <% if current_user.id != @user.id %>
+          <%= link_to t('defaults.delete'), admin_user_path(@user), method: :delete, data: { confirm: t('admin.users.delete_confirm', id: @user.id, name: @user.name) }, class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+      <table class="table table-bordered bg-white">
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:id) %></th>
+          <td><%= @user.id %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:role) %></th>
+          <td><%= @user.role_i18n %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:name) %></th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:email) %></th>
+          <td><%= @user.email %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

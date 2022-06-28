@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= country.id %>
+  </td>
+  <td>
+    <%= country.name %>
+  </td>
+  <td>
+    <%= country.name_ens %>
+  </td>
+  <td>
+    <%= country.iso %>
+  </td>
+  <td>
+		<!-- ユーザ詳細画面へのリンク -->
+    <%= link_to t('defaults.show'), admin_country_path(country), class: 'btn btn-info' %>
+		<!-- ユーザ編集画面へのリンク -->
+    <%= link_to t('defaults.edit'), edit_admin_country_path(country), class: 'btn btn-success' %>
+		<!-- ユーザ削除リンク -->
+    <%= link_to t('defaults.delete'), admin_country_path(country), method: :delete, data: { confirm: t('admin.countries.delete_confirm', id: country.id, name: country.name) }, class: 'btn btn-danger' %>
+  </td>
+</tr>

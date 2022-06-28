@@ -1,0 +1,71 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <%= link_to admin_root_path, class: 'brand-link' do %>
+    <span class="brand-text font-weight-light"><%= t('defaults.app_title') %></span>
+  <% end %>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="info">
+        <p class="mb-0 text-light"><%= current_user.name %></p>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admin_users_path, class: "nav-link #{active_if('admin/users')}" do %>
+            <i class="nav-icon fas fa-user"></i>
+              <p><%= User.model_name.human %></p>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admin_countries_path, class: "nav-link #{active_if('admin/countries')}" do %>
+            <i class="nav-icon fas fa-globe-asia"></i>
+              <p><%= Country.model_name.human %></p>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admin_prefectures_path, class: "nav-link #{active_if('admin/prefectures')}" do %>
+            <i class="nav-icon fas fa-globe"></i>
+              <p><%= Prefecture.model_name.human %></p>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admin_spots_path, class: "nav-link #{active_if('admin/spots')}" do %>
+            <i class="nav-icon fas fa-map-marker-alt"></i>
+              <p><%= Spot.model_name.human %></p>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admin_domestic_areas_path, class: "nav-link #{active_if('admin/domestic_areas')}" do %>
+            <i class="nav-icon fas fa-map-marker"></i>
+              <p><%= DomesticArea.model_name.human %></p>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admin_videos_path, class: "nav-link #{active_if('admin/videos')}" do %>
+              <i class="nav-icon fab fa-youtube"></i>
+              <p><%= Video.model_name.human %></p>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

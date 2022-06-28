@@ -1,0 +1,34 @@
+<% content_for(:title, t('.title', id: @spot.id, name: @spot.name)) %>
+<div class="p-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title', id: @spot.id, name: @spot.name) %></h1>
+      <!-- Admin::SpotsControllerのupdateアクション -->
+      <%= form_with model: @spot, url: admin_spot_path(@spot), local: true do |f| %>
+        <%= render 'admin/shared/error_message', object: f.object %>
+        <div class="form-group">
+          <%= f.label :country, Spot.human_attribute_name(:country_id) %>
+          <br>
+          <%= f.collection_select :country_id, Country.all, :id, :name, include_blank: "選択して下さい" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name, Spot.human_attribute_name(:name) %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name_ens, Spot.human_attribute_name(:name_ens) %>
+          <%= f.text_field :name_ens, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :lat, Spot.human_attribute_name(:lat) %>
+          <%= f.text_field :lat, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :lng, Spot.human_attribute_name(:lng) %>
+          <%= f.text_field :lng, class: 'form-control' %>
+        </div>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

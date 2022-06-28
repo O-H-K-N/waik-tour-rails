@@ -1,0 +1,17 @@
+<tr>
+  <td>
+    <%= video.id %>
+  </td>
+  <td>
+    <%= video.spot %>(<%= video.area %>)
+  </td>
+  <td>
+    <a href="https://www.youtube.com/watch?v=<%= video.video_id %>"target="_blank"><%= video.video_id %></a>
+  </td>
+  <td>
+		<!-- ユーザ詳細画面へのリンク -->
+    <%= link_to t('defaults.show'), admin_video_path(video), class: 'btn btn-info' %>
+		<!-- ユーザ削除リンク -->
+    <%= link_to t('defaults.delete'), admin_video_path(video), method: :delete, data: { confirm: t('admin.videos.delete_confirm', id: video.id, video_id: video.video_id) }, class: 'btn btn-danger' %>
+  </td>
+</tr>

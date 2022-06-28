@@ -1,0 +1,62 @@
+<% content_for(:title, t('.title', id: @spot.id, name: @spot.name)) %>
+<div class="p-5">
+  <div class="row mb-3">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title', id: @spot.id, name: @spot.name) %></h1>
+      <div class="text-right mb-3">
+				<!-- ユーザ編集画面へのリンク -->
+        <%= link_to t('defaults.edit'), edit_admin_spot_path(@spot), class: 'btn btn-success' %>
+				<!-- ユーザ削除のリンク -->
+        <%= link_to t('defaults.delete'), admin_spot_path(@spot), method: :delete, data: { confirm: t('admin.spots.delete_confirm', id: @spot.id, name: @spot.name) }, class: 'btn btn-danger' %>
+      </div>
+      <table class="table table-bordered bg-white">
+        <tr>
+          <th scope="row"><%= Spot.human_attribute_name(:id) %></th>
+          <td><%= @spot.id %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Spot.human_attribute_name(:country_id) %></th>
+          <td><%= @spot.country.name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Spot.human_attribute_name(:name) %></th>
+          <td><%= @spot.name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Spot.human_attribute_name(:name_ens) %></th>
+          <td><%= @spot.name_ens %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Spot.human_attribute_name(:lat) %></th>
+          <td><%= @spot.lat %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Spot.human_attribute_name(:lng) %></th>
+          <td><%= @spot.lng %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <%# 地点に関連づく動画を一覧で表示 %>
+  <% if @videos.present? %>
+    <h2><%=t('.video_title')%></h2>
+    <div class="row my-2">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col"><%= Video.human_attribute_name(:id) %></th>
+            <th scope="col"><%= Video.human_attribute_name(:spot) %></th>
+            <th scope="col"><%= Video.human_attribute_name(:video_id) %></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- 地点一覧表示のフォーム -->
+          <%= render partial: "admin/shared/video", collection: @videos %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>

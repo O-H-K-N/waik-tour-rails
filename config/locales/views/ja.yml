@@ -1,0 +1,132 @@
+ja:
+  defaults:
+    app_title: WALKTOUR
+    logout: ログアウト
+    show: 詳細
+    new: 新規作成
+    edit: 修正
+    delete: 削除
+    delete_confirm: 本当に削除してもいいですか？
+    unspecified: 権限(全て)
+  admin:
+    user_sessions:
+      new:
+        title: ログイン
+      create:
+        success: ログインしました
+        danger: ログインに失敗しました
+      destroy:
+        success: ログアウトしました
+    users:
+      index:
+        title: ユーザ一覧
+      show:
+        title: '%{id}. %{name}'
+        profile: プロフィール
+      new:
+        title: ユーザ作成
+      edit:
+        title: '%{id}. %{name}の修正'
+      create:
+        success: '%{id}. %{name}を作成しました'
+        danger: 作成に失敗しました
+      update:
+        success: '%{id}. %{name}を更新しました'
+        danger: 更新に失敗しました
+      destroy:
+        success: '%{id}. %{name}を削除しました'
+      delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
+    dashboards:
+      index:
+        title: ダッシュボード
+    countries:
+      index:
+        title: 国一覧
+      show:
+        title: '%{id}. %{name}'
+        spot_title: 地点一覧
+      new:
+        title: 国作成
+      edit:
+        title: '%{id}. %{name}の修正'
+      create:
+        success: '%{id}. %{name}を作成しました'
+        danger: 作成に失敗しました
+      update:
+        success: '%{id}. %{name}を更新しました'
+        danger: 更新に失敗しました
+      destroy:
+        success: '%{id}. %{name}を削除しました'
+      delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
+    prefectures:
+      index:
+        title: 都道府県一覧
+      show:
+        title: '%{id}. %{name}'
+        spot_title: 地点一覧
+      new:
+        title: 都道府県作成
+      edit:
+        title: '%{id}. %{name}の修正'
+      create:
+        success: '%{id}. %{name}を作成しました'
+        danger: 作成に失敗しました
+      update:
+        success: '%{id}. %{name}を更新しました'
+        danger: 更新に失敗しました
+      destroy:
+        success: '%{id}. %{name}を削除しました'
+      delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
+    spots:
+      index:
+        title: スポット一覧
+      show:
+        title: '%{id}. %{name}'
+        video_title: 動画一覧
+      new:
+        title: スポット作成
+      edit:
+        title: '%{id}. %{name}の修正'
+      create:
+        success: '%{id}. %{name}を作成しました'
+        danger: 作成に失敗しました
+      update:
+        success: '%{id}. %{name}を更新しました'
+        danger: 更新に失敗しました
+      destroy:
+        success: '%{id}. %{name}を削除しました'
+      delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
+    domestic_areas:
+      index:
+        title: 国内スポット一覧
+      show:
+        title: '%{id}. %{name}'
+        video_title: 動画一覧
+      new:
+        title: 国内スポット作成
+      edit:
+        title: '%{id}. %{name}の修正'
+      create:
+        success: '%{id}. %{name}を作成しました'
+        danger: 作成に失敗しました
+      update:
+        success: '%{id}. %{name}を更新しました'
+        danger: 更新に失敗しました
+      destroy:
+        success: '%{id}. %{name}を削除しました'
+      delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
+    videos:
+      index:
+        title: 動画一覧
+      show:
+        title: '%{id}. %{video_id}'
+      destroy:
+        success: '%{id}. %{video_id}を削除しました'
+      delete_confirm: '本当に「%{id}. %{video_id}」を削除してもいいですか？'
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."

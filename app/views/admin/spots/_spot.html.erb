@@ -1,0 +1,28 @@
+<tr>
+  <td>
+    <%= spot.id %>
+  </td>
+  <td>
+    <%= link_to spot.country.name, admin_country_path(spot.country_id) %>
+  </td>
+  <td>
+    <%= spot.name %>
+  </td>
+  <td>
+    <%= spot.name_ens %>
+  </td>
+  <td>
+    <%= spot.lat %>
+  </td>
+  <td>
+    <%= spot.lng %>
+  </td>
+  <td>
+		<!-- ユーザ詳細画面へのリンク -->
+    <%= link_to t('defaults.show'), admin_spot_path(spot), class: 'btn btn-info' %>
+		<!-- ユーザ編集画面へのリンク -->
+    <%= link_to t('defaults.edit'), edit_admin_spot_path(spot), class: 'btn btn-success' %>
+		<!-- ユーザ削除リンク -->
+    <%= link_to t('defaults.delete'), admin_spot_path(spot), method: :delete, data: { confirm: t('admin.spots.delete_confirm', id: spot.id, name: spot.name) }, class: 'btn btn-danger' %>
+  </td>
+</tr>
