@@ -62,7 +62,8 @@ class Admin::SpotsController < Admin::BaseController
       :name,
       :name_ens,
       :lat,
-      :lng
+      :lng,
+      :click_count
     )
   end
 end

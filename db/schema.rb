@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_06_27_070750) do
     t.string "name_ens", null: false
     t.decimal "lat", precision: 11, scale: 8, null: false
     t.decimal "lng", precision: 11, scale: 8, null: false
+    t.integer "click_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["country_id"], name: "index_spots_on_country_id"
