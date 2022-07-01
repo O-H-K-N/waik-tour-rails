@@ -18,6 +18,9 @@
     <%= spot.lng %>
   </td>
   <td>
+    <%= spot.click_count %>
+  </td>
+  <td>
 		<!-- ユーザ詳細画面へのリンク -->
     <%= link_to t('defaults.show'), admin_spot_path(spot), class: 'btn btn-info' %>
 		<!-- ユーザ編集画面へのリンク -->

@@ -6,6 +6,7 @@ class CreateSpots < ActiveRecord::Migration[6.1]
       t.string :name_ens, null: false, unique: true
       t.decimal :lat,  precision: 11, scale: 8, null: false
       t.decimal :lng, precision: 11, scale: 8, null: false
+      t.integer :click_count, default: 0
 
       t.timestamps
     end

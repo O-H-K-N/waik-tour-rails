@@ -27,6 +27,10 @@
           <%= f.label :lng, Spot.human_attribute_name(:lng) %>
           <%= f.text_field :lng, class: 'form-control' %>
         </div>
+        <div class="form-group">
+          <%= f.label :click_count, Spot.human_attribute_name(:click_count) %>
+          <%= f.text_field :click_count, class: 'form-control' %>
+        </div>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>
