@@ -20,13 +20,19 @@ class Api::V1::SpotsController < ApiController
 
   # Spotテーブルのすべての地点とその国、動画を返す
   def all_spot
-    spots = Spot.all.order(click_count: :desc)
+    all_spots = Spot.all.order(click_count: :desc)
+    spots = []
     areas = []
     videos = []
-    spots.each do |spot|
-      areas << spot.country
-      ramdam_data = Video.where(spot: spot.name).order("RANDOM()").first
-      videos << { video_id: ramdam_data.video_id, title: ramdam_data.title, thumbnail: ramdam_data.thumbnail, view_count: ramdam_data.view_count.to_s(:delimited), published_at: ramdam_data.published_at.strftime("%Y/%m/%d") }
+
+    all_spots.each do |spot|
+      # videoを保有している地点のみ有効
+      if Video.where(spot: spot.name) != []
+        spots << spot
+        areas << spot.country
+        ramdam_data = Video.where(spot: spot.name).order("RANDOM()").first
+        videos << { video_id: ramdam_data.video_id, title: ramdam_data.title, thumbnail: ramdam_data.thumbnail, view_count: ramdam_data.view_count.to_s(:delimited), published_at: ramdam_data.published_at.strftime("%Y/%m/%d") }
+      end
     end
     render json: { spots: spots, areas: areas, videos: videos }
   end
