@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         resources :spots, only: %i[index edit]
       end
       resources :requests, only: %i[create]
+      resources :news_lists, only: %i[index]
       get '/all_spot', to: 'spots#all_spot'
       get '/set_country', to: 'countries#set_country'
       get '/all_country', to: 'countries#all_country'
