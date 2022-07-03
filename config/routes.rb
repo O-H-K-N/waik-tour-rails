@@ -30,5 +30,6 @@ Rails.application.routes.draw do
     resources :countries, only: %i[index new edit create update show destroy]
     resources :spots, only: %i[index new edit create update show destroy]
     resources :videos, only: %i[index edit update show destroy]
+    resources :requests, only: %i[index edit update show]
   end
 end

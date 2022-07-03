@@ -1,7 +1,5 @@
 #管理者に一般ユーザの閲覧、編集、削除の権限を与える。
 class Admin::UsersController < Admin::BaseController
-	# 自動ログインをスキップ
-  skip_before_action :require_login
   before_action :set_user, only: %i{show edit update destroy}
 
   # 一覧は検索機能とページネーションを実装

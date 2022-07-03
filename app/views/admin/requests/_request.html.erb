@@ -1,0 +1,26 @@
+<tr>
+  <td>
+    <%= request.id %>
+  </td>
+  <td>
+    <%= link_to request.user.name, admin_user_path(request.user.id) %>
+  </td>
+  <td>
+    <%= request.area %>
+  </td>
+  <td>
+    <%= request.spot %>
+  </td>
+  <td>
+    <%= request.check_i18n %>
+  </td>
+  <% if request.check_i18n == '未確認' %>
+    <td>
+      <!-- リクエスト確認済みリンク -->
+      <%= link_to t('admin.requests.checked'), admin_request_path(request), method: :put, data: { confirm: t('admin.requests.update_confirm', id: request.id )}, class: 'btn btn-success' %>
+    </td>
+  <% else %>
+    <td>
+    </td>
+  <% end %>
+</tr>

@@ -48,6 +48,14 @@
           <% end %>
         </li>
       </ul>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admin_requests_path, class: "nav-link #{active_if('admin/requests')}" do %>
+              <i class="nav-icon fas fa-paper-plane"></i>
+              <p><%= Request.model_name.human %></p>
+          <% end %>
+        </li>
+      </ul>
     </nav>
     <!-- /.sidebar-menu -->
   </div>

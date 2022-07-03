@@ -1,0 +1,12 @@
+<%= search_form_for @q, url: url do |f| %>
+  <div class="row">
+    <div class="form-inline align-items-center mx-auto">
+      <div class="col-auto">
+        <%= f.search_field :area_or_spot_cont, class: "form-control", placeholder: "検索ワード" %>
+      </div>
+      <div class="col-auto">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>
