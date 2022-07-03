@@ -4,8 +4,10 @@ Rails.application.routes.draw do
       resources :countries, only: %i[index] do
         resources :spots, only: %i[index edit]
       end
+      resources :requests, only: %i[create]
       get '/all_spot', to: 'spots#all_spot'
       get '/set_country', to: 'countries#set_country'
+      get '/all_country', to: 'countries#all_country'
       get '/many_video', to: 'videos#many_video'
       post '/login', to: 'user_sessions#create'
       delete 'logout', to: 'user_sessions#destroy', as: :logout

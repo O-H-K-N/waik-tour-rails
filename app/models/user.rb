@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :requests, dependent: :destroy
   # JWT読み込み
   include JwtToken
   authenticates_with_sorcery!
