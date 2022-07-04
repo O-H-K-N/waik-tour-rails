@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   #管理者画面のルーティング設定
   namespace :admin do
-    root to: 'dashboards#index'
+    root to: 'requests#index'
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
