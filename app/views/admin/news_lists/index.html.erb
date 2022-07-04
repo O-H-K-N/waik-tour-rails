@@ -1,0 +1,37 @@
+<% content_for(:title, t('.title')) %>
+<div class="p-5">
+  <h1><%= t('.title') %></h1>
+  <div class="row">
+    <div class="col-md-9 mb-3">
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= link_to t('defaults.new'), new_admin_news_list_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+  <% if @news_lists.present? %>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col"><%= NewsList.human_attribute_name(:id) %></th>
+            <th scope="col"><%= NewsList.human_attribute_name(:created_at) %></th>
+            <th scope="col"><%= NewsList.human_attribute_name(:content) %></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- 一覧表示のフォーム -->
+          <%= render partial: "news_list", collection: @news_lists %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- ページネーション -->
+        <%= paginate @news_lists, outer_window: 2 %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -15,6 +15,7 @@ ja:
       spot: スポット
       video: 動画
       request: スポットのリクエスト
+      news_list: お知らせ
     attributes:
       user:
         name: 名前
@@ -27,7 +28,7 @@ ja:
         name_ens: 国名(英語表記)
         iso: 国コード
       spot:
-        country: 国
+        country_id: 国
         name: 地点名
         name_ens: 地点名(英語表記)
         lat: 緯度
@@ -45,3 +46,6 @@ ja:
         area: 国
         spot: 地点
         check: 確認状況
+      news_list:
+        created_at: お知らせ日
+        content: 内容

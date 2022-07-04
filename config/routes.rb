@@ -32,5 +32,6 @@ Rails.application.routes.draw do
     resources :spots, only: %i[index new edit create update show destroy]
     resources :videos, only: %i[index edit update show destroy]
     resources :requests, only: %i[index edit update show]
+    resources :news_lists, only: %i[index new edit create update destroy]
   end
 end

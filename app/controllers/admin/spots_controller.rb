@@ -18,7 +18,6 @@ class Admin::SpotsController < Admin::BaseController
   def create
     @spot = Spot.new(spot_params)
     if @spot.save
-      flash.now[:success] = t('.success', id: @spot.id, name: @spot.name)
       redirect_to admin_spot_path(@spot), success: t('.success', id: @spot.id, name: @spot.name)
     else
       render :new

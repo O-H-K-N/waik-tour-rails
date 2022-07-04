@@ -92,6 +92,20 @@ ja:
         success: 'No.%{id}を確認済みにしました'
       checked: 確認OK
       update_confirm: '本当にNo.%{id}を確認済みにしてもいいですか？'
+    news_lists:
+      index:
+        title: お知らせ一覧
+      new:
+        title: お知らせ作成
+      create:
+        success: 'No.%{id}を作成しました'
+      edit:
+        title: お知らせ修正
+      update:
+        success: 'No.%{id}を修正しました'
+      destroy:
+        success: 'No.%{id}を削除しました'
+      delete_confirm: '本当にNo.%{id}を削除してもいいですか？'
   views:
     pagination:
       first: "&laquo; 最初"
