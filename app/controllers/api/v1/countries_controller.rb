@@ -13,6 +13,15 @@ class Api::V1::CountriesController < ApiController
     render json: {areas: areas, iso: iso }
   end
 
+  def all_country
+    areas = []
+    countries = Country.all
+    countries.each do |country|
+      areas << country.name
+    end
+    render json: {areas: areas }
+  end
+
   # 国コード(iso)で判別し国を取得
   def index
     country = Country.find_by(iso: params[:iso])
@@ -26,5 +35,3 @@ class Api::V1::CountriesController < ApiController
     end
   end
 end
-
-

@@ -4,8 +4,11 @@ Rails.application.routes.draw do
       resources :countries, only: %i[index] do
         resources :spots, only: %i[index edit]
       end
+      resources :requests, only: %i[create]
+      resources :news_lists, only: %i[index]
       get '/all_spot', to: 'spots#all_spot'
       get '/set_country', to: 'countries#set_country'
+      get '/all_country', to: 'countries#all_country'
       get '/many_video', to: 'videos#many_video'
       post '/login', to: 'user_sessions#create'
       delete 'logout', to: 'user_sessions#destroy', as: :logout
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
 
   #管理者画面のルーティング設定
   namespace :admin do
-    root to: 'dashboards#index'
+    root to: 'requests#index'
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
@@ -28,5 +31,7 @@ Rails.application.routes.draw do
     resources :countries, only: %i[index new edit create update show destroy]
     resources :spots, only: %i[index new edit create update show destroy]
     resources :videos, only: %i[index edit update show destroy]
+    resources :requests, only: %i[index edit update show]
+    resources :news_lists, only: %i[index new edit create update destroy]
   end
 end

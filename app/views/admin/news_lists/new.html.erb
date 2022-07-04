@@ -1,0 +1,17 @@
+<% content_for(:title, t('.title'))%>
+<div class="p-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <!-- Admin::NewsListsControllerのupdateアクション -->
+      <%= form_with model: @news_list, url: admin_news_lists_path(@news_list), local: true do |f| %>
+        <%= render 'admin/shared/error_message', object: f.object %>
+        <div class="form-group">
+          <%= f.label :content, NewsList.human_attribute_name(:content) %>
+          <%= f.text_field :content, class: 'form-control' %>
+        </div>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

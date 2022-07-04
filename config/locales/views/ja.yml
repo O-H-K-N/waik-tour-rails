@@ -58,25 +58,6 @@ ja:
       destroy:
         success: '%{id}. %{name}を削除しました'
       delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
-    prefectures:
-      index:
-        title: 都道府県一覧
-      show:
-        title: '%{id}. %{name}'
-        spot_title: 地点一覧
-      new:
-        title: 都道府県作成
-      edit:
-        title: '%{id}. %{name}の修正'
-      create:
-        success: '%{id}. %{name}を作成しました'
-        danger: 作成に失敗しました
-      update:
-        success: '%{id}. %{name}を更新しました'
-        danger: 更新に失敗しました
-      destroy:
-        success: '%{id}. %{name}を削除しました'
-      delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
     spots:
       index:
         title: スポット一覧
@@ -96,25 +77,6 @@ ja:
       destroy:
         success: '%{id}. %{name}を削除しました'
       delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
-    domestic_areas:
-      index:
-        title: 国内スポット一覧
-      show:
-        title: '%{id}. %{name}'
-        video_title: 動画一覧
-      new:
-        title: 国内スポット作成
-      edit:
-        title: '%{id}. %{name}の修正'
-      create:
-        success: '%{id}. %{name}を作成しました'
-        danger: 作成に失敗しました
-      update:
-        success: '%{id}. %{name}を更新しました'
-        danger: 更新に失敗しました
-      destroy:
-        success: '%{id}. %{name}を削除しました'
-      delete_confirm: '本当に「%{id}. %{name}」を削除してもいいですか？'
     videos:
       index:
         title: 動画一覧
@@ -123,6 +85,27 @@ ja:
       destroy:
         success: '%{id}. %{video_id}を削除しました'
       delete_confirm: '本当に「%{id}. %{video_id}」を削除してもいいですか？'
+    requests:
+      index:
+        title: スポットのリクエスト一覧
+      update:
+        success: 'No.%{id}を確認済みにしました'
+      checked: 確認OK
+      update_confirm: '本当にNo.%{id}を確認済みにしてもいいですか？'
+    news_lists:
+      index:
+        title: お知らせ一覧
+      new:
+        title: お知らせ作成
+      create:
+        success: 'No.%{id}を作成しました'
+      edit:
+        title: お知らせ修正
+      update:
+        success: 'No.%{id}を修正しました'
+      destroy:
+        success: 'No.%{id}を削除しました'
+      delete_confirm: '本当にNo.%{id}を削除してもいいですか？'
   views:
     pagination:
       first: "&laquo; 最初"

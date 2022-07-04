@@ -4,14 +4,18 @@ ja:
       role:
         general: 一般
         admin: 管理者
+    request:
+      check:
+        uncheck: 未確認
+        checked: 確認済み
   activerecord:
     models:
       user: ユーザ
       country: 国
-      prefecture: 都道府県
       spot: スポット
-      domestic_area: 国内スポット
       video: 動画
+      request: スポットのリクエスト
+      news_list: お知らせ
     attributes:
       user:
         name: 名前
@@ -37,3 +41,11 @@ ja:
         title: 動画名
         thumbnail: サムネイル
         view_count: 閲覧数
+      request:
+        user: ユーザ
+        area: 国
+        spot: 地点
+        check: 確認状況
+      news_list:
+        created_at: お知らせ日
+        content: 内容

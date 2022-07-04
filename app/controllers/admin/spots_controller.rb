@@ -1,6 +1,4 @@
 class Admin::SpotsController < Admin::BaseController
-  #自動ログインをスキップ
-  skip_before_action :require_login
   before_action :set_spot, only: %i{show edit update destroy}
 
   #一覧は検索機能とページネーションを実装
@@ -20,7 +18,6 @@ class Admin::SpotsController < Admin::BaseController
   def create
     @spot = Spot.new(spot_params)
     if @spot.save
-      flash.now[:success] = t('.success', id: @spot.id, name: @spot.name)
       redirect_to admin_spot_path(@spot), success: t('.success', id: @spot.id, name: @spot.name)
     else
       render :new
