@@ -13,6 +13,7 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails'
 gem 'font-awesome-sass', '~> 5.11.2'
 gem 'jquery-rails'
+gem 'bootstrap', '~> 4.5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
