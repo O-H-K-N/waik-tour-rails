@@ -387,6 +387,7 @@ DEPENDENCIES
   seed-fu
   sorcery
   spring
+  sprockets-rails
   tzinfo-data
   uglifier (>= 1.3.0)
 
