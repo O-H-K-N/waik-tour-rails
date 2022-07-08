@@ -15,18 +15,16 @@
   </head>
 
   <body class="hold-transition sidebar-mini layout-fixed">
-  <div class="wrapper">
-    <%= render 'admin/shared/header' %>
-    <%= render 'admin/shared/sidebar' %>
+    <div class="wrapper">
+      <%= render 'admin/shared/header' %>
+      <%= render 'admin/shared/sidebar' %>
 
-    <div class="content-wrapper">
-      <%= render 'admin/shared/flash_message' %>
-      <%= yield %>
+      <div class="content-wrapper">
+        <%= render 'admin/shared/flash_message' %>
+        <%= yield %>
+      </div>
+
+      <%= render 'admin/shared/footer' %>
     </div>
-
-    <%= render 'admin/shared/footer' %>
-  </div>
-    <%# #ブラウザにアセットを読み込ませる %>
-  <%= javascript_include_tag 'admin' %>
   </body>
 </html>
