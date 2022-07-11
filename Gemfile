@@ -41,6 +41,8 @@ gem 'enum_help'
 
 gem 'rake'
 gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
 
 group :development, :test do
   #Debugger
