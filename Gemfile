@@ -38,6 +38,7 @@ gem 'rails-i18n'
 gem 'enum_help'
 
 gem "net-smtp"
+gem 'rake'
 
 group :development, :test do
   #Debugger

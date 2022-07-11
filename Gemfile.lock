@@ -372,6 +372,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.6)
   rails-i18n
+  rake
   ransack
   rspec-rails
   rubocop
