@@ -363,6 +363,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.6)
   rails-i18n
+  rake
   ransack
   rspec-rails
   rubocop
@@ -374,4 +375,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   2.3.14
+   2.3.17

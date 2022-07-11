@@ -37,6 +37,8 @@ gem 'kaminari'
 gem 'rails-i18n'
 gem 'enum_help'
 
+gem 'rake'
+
 group :development, :test do
   #Debugger
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
