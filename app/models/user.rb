@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :requests, dependent: :destroy
-  has_many :spots, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   # ユーザがブックマーク登録しているスポットをすべて取得
   has_many :bookmark_spots, through: :bookmarks, source: :spot
