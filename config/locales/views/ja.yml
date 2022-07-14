@@ -1,6 +1,6 @@
 ja:
   defaults:
-    app_title: VtourHub
+    app_title: VtourHub管理
     logout: ログアウト
     show: 詳細
     new: 新規作成
@@ -8,6 +8,7 @@ ja:
     delete: 削除
     delete_confirm: 本当に削除してもいいですか？
     unspecified: 権限(全て)
+    admin_login: ログインできません
   admin:
     user_sessions:
       new:

@@ -10,9 +10,9 @@ class Api::V1::UsersController < ApiController
     user = User.new(user_params)
 
     if user.save
-      render json: user
+      render json: { user: user }
     else
-      render json: user.errors, status: :bad_request
+      render json: { status: '400' }
     end
   end
 

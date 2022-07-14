@@ -4,7 +4,7 @@ class Admin::RequestsController < Admin::BaseController
   #一覧は検索機能とページネーションを実装
   def index
     @q = Request.ransack(params[:q])
-    @requests = @q.result(distinct: true).includes(:user).order(created_at: :asc).page(params[:page]).per(30)
+    @requests = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(15)
   end
 
   def show; end

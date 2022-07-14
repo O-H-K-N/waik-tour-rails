@@ -1,6 +1,5 @@
 class Spot < ApplicationRecord
   belongs_to :country
-  belongs_to :user
   has_many :bookmarks, dependent: :destroy
   validates :country_id, presence: true
   validates :name, presence: true

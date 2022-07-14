@@ -8,25 +8,25 @@
         <div class="card-body login-card-body">
 					<%# admin/user_sessions_controller.rbのcreateアクションに遷移 %>
           <%= form_with model: @user, local: true do |f| %>
-              <%= f.label :email, User.human_attribute_name(:email) %>
-              <div class="input-group mb-3">
-                <%= f.email_field :email, autofocus: true, class: "form-control", id: 'email' %>
-                <div class="input-group-append">
-                  <div class="input-group-text"><span class="fas fa-envelope"></span></div>
-                </div>
+            <%= f.label :email, User.human_attribute_name(:email) %>
+            <div class="input-group mb-3">
+              <%= f.email_field :email, autofocus: true, class: "form-control", id: 'email' %>
+              <div class="input-group-append">
+                <div class="input-group-text"><span class="fas fa-envelope"></span></div>
               </div>
-              <%= f.label :password, User.human_attribute_name(:password) %>
-              <div class="input-group mb-3">
-                <%= f.password_field :password, autofocus: true, class: "form-control", id: 'password' %>
-                <div class="input-group-append">
-                  <div class="input-group-text"><span class="fas fa-lock"></span></div>
-                </div>
+            </div>
+            <%= f.label :password, User.human_attribute_name(:password) %>
+            <div class="input-group mb-3">
+              <%= f.password_field :password, autofocus: true, class: "form-control", id: 'password' %>
+              <div class="input-group-append">
+                <div class="input-group-text"><span class="fas fa-lock"></span></div>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <%= f.submit t('.title') , class: 'btn-block btn-prymary' %>
-                </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <%= f.submit t('.title') , class: 'btn-block btn-prymary' %>
               </div>
+            </div>
           <% end %>
         </div>
     </div>
