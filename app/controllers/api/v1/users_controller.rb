@@ -16,6 +16,15 @@ class Api::V1::UsersController < ApiController
     end
   end
 
+  def update
+    user = User.find(params[:id])
+    if user.update(name: params[:name], email: params[:email])
+      render json: { status: 'ok' }
+    else
+      render json: { status: 'fail' }
+    end
+  end
+
   # ログインユーザー情報を返すエンドポイント
   def me
     render json: current_user
