@@ -19,9 +19,9 @@ class Api::V1::UsersController < ApiController
   def update
     user = User.find(params[:id])
     if user.update(name: params[:name], email: params[:email])
-      render json: { status: 'ok' }
+      render json: { message: 'プロフィールを編集しました' }
     else
-      render json: { status: 'fail' }
+      render json: { message: '予期せぬエラーが発生しました' }
     end
   end
 
