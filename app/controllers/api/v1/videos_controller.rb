@@ -2,7 +2,7 @@ class Api::V1::VideosController < ApiController
   include YoutubeApi
 
   # 一覧で表示する動画を取得
-  def many_video
+  def index
     # スポットに関する動画を取得
     @search_results = Video.where(spot: params[:spot_name])
     @response = []
