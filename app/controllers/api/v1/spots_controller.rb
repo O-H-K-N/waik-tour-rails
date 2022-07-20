@@ -23,6 +23,28 @@ class Api::V1::SpotsController < ApiController
         end
       end
       render json: { spots: spots, areas: areas, videos: videos }
+    elsif params[:flag] == 'new_spot'
+      # Spotテーブルのすべての地点とその国、動画を返す
+      new_spots = Spot.all.order(created_at: :desc)
+      spots = []
+      areas = []
+      videos = []
+      new_spots.each do |spot|
+        # 3日前までに作成された地点&videoを保有している地点のみ有効
+        if spot.recently? && Video.where(spot: spot.name) != []
+          spots << spot
+          areas << spot.country
+          ramdam_data = Video.where(spot: spot.name).order("RANDOM()").first
+          videos << {
+            video_id: ramdam_data.video_id,
+            title: ramdam_data.title,
+            thumbnail: ramdam_data.thumbnail,
+            view_count: ramdam_data.view_count.to_s(:delimited),
+            published_at: ramdam_data.published_at.strftime("%Y/%m/%d")
+          }
+        end
+      end
+      render json: { spots: spots, areas: areas, videos: videos }
     else
       # 取得した国IDが有する地点情報を返す
       country = Country.find(params[:country_id])
