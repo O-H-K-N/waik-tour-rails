@@ -9,6 +9,9 @@
     <%= news_list.content %>
   </td>
   <td>
+    <%= news_list.content_ens %>
+  </td>
+  <td>
 		<!-- ユーザ編集画面へのリンク -->
     <%= link_to t('defaults.edit'), edit_admin_news_list_path(news_list), class: 'btn btn-success' %>
 		<!-- ユーザ削除リンク -->

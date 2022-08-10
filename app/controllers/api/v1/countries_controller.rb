@@ -3,7 +3,7 @@ class Api::V1::CountriesController < ApiController
   def index
     iso = []
     areas = []
-    areas_name = []
+    all_areas = []
     countries = Country.all
     countries.each do |country|
       # 地点を一つでも含んだ国のみを取得
@@ -12,9 +12,9 @@ class Api::V1::CountriesController < ApiController
         areas << country
       end
       # DB内にあるすべての国の名前を取得
-      areas_name << country.name
+      all_areas << country
     end
-    render json: {areas: areas, iso: iso, areas_name: areas_name }
+    render json: {areas: areas, iso: iso, all_areas: all_areas }
   end
 
   # 国IDから国に関する地点情報を取得
