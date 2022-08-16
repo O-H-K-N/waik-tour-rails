@@ -39,6 +39,7 @@ gem 'kaminari'
 gem 'rails-i18n'
 gem 'enum_help'
 
+gem 'rake'
 gem 'net-smtp'
 
 group :development, :test do
