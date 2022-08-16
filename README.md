@@ -40,7 +40,7 @@ https://github.com/O-H-K-N/walk-tour-rails
   - rubocop
 - 主なライブラリ
   - AdminLTE 3.0
-  
+
 ### フロントエンド
 - Vue.js 2.6.14
 - Vuetify 2.6.0
@@ -63,8 +63,3 @@ https://github.com/O-H-K-N/walk-tour-rails
 ## □ ER図
 
 ![スクリーンショット 2022-07-28 15 34 48](https://user-images.githubusercontent.com/81758321/181437090-edbbb467-8be9-407a-bf01-b716bba9b7b0.png)
-
-## □ 今後の実装予定機能
-- Twiiterログイン
-- 多言語化
-

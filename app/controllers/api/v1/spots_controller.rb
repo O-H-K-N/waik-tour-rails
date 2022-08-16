@@ -7,7 +7,7 @@ class Api::V1::SpotsController < ApiController
       # videoを保有している地点のみ有効
       if Video.where(spot: spot.name) != []
         ramdam_data = Video.where(spot: spot.name).order("RANDOM()").first
-        response<< {
+        response << {
           spot: spot,
           area: spot.country,
           video: {
@@ -22,7 +22,7 @@ class Api::V1::SpotsController < ApiController
         }
       end
     end
-    render json: { ranking: response, create: response.select{|a| a[:spot].recently?} }
+    render json: { ranking: response, create: response.select { |a| a[:spot].recently? } }
   end
 
   # 地点のカウント数(click_count)を+1する

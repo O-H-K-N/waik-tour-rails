@@ -11,7 +11,6 @@ class Spot < ApplicationRecord
   validates :lng, presence: true
   validates :lng, uniqueness: true
 
-
   # 3日以内に作成されたものか確認
   def recently?
     created_at > Time.current.days_ago(3)
