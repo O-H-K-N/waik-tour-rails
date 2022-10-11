@@ -34,10 +34,6 @@ class Api::V1::BookmarksController < ApiController
   # お気に入り登録されているかを確認
   def bookmarked
     spot = Spot.find(params[:spot_id])
-    if current_user.bookmark?(spot) == true
-      render json: { status: 'yes' }
-    else
-      render json: { status: 'no' }
-    end
+    render json: current_user.bookmark?(spot) ? { status: 'yes' } : { status: 'no' }
   end
 end
