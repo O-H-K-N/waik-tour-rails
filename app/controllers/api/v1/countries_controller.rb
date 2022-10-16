@@ -21,11 +21,8 @@ class Api::V1::CountriesController < ApiController
   def show
     country = Country.find(params[:id])
     spots = country.spots
-    if spots.present?
-      render json: { area: country, spots: spots }
-    else
-      render json: country, status: :bad_request
-    end
+
+    render json: spots.present? ? { area: country, spots: spots } : country
   end
 
   # 国コード(iso)で判別し国を取得
@@ -34,10 +31,6 @@ class Api::V1::CountriesController < ApiController
     spots = Spot.find_by(country_id: country.id)
 
     # 地点登録されている国をjsonで返す
-    if spots.present?
-      render json: country
-    else
-      render json: country, status: :bad_request
-    end
+    spots.present? ? ( render json: country ) : ( render json: country, status: :bad_request )
   end
 end
