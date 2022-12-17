@@ -24,6 +24,11 @@ WORKDIR /$APP_NAME
 
 # 別途インストールが必要なものがある場合は追加してください
 RUN apt-get update -qq && apt-get install -y build-essential
+RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
+&& wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+&& echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+&& apt-get update -qq \
+&& apt-get install -y build-essential nodejs yarn
 
 RUN gem install bundler:$BUNDLER_VERSION
 
@@ -31,6 +36,8 @@ COPY Gemfile /$APP_NAME/Gemfile
 COPY Gemfile.lock /$APP_NAME/Gemfile.lock
 
 RUN bundle install
+
+COPY yarn.lock /$APP_NAME/yarn.lock
 
 COPY . /$APP_NAME/
 
