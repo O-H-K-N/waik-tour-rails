@@ -34,6 +34,9 @@ RUN bundle install
 
 COPY . /$APP_NAME/
 
+RUN yarn install --production --frozen-lockfile
+RUN yarn cache clean
+
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
