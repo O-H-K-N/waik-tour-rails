@@ -2,6 +2,8 @@
 ARG APP_NAME=VtourHubAdmin
 #使いたいrubyのimage名に置き換えてください
 ARG RUBY_IMAGE=ruby:3.1.2
+#使いたいnodeのversion
+ARG NODE_VERSION='16'
 #インストールするbundlerのversionに置き換えてください
 ARG BUNDLER_VERSION=2.3.17
 
