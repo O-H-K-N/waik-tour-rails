@@ -1,5 +1,5 @@
 #applicationのディレクトリ名で置き換えてください
-ARG APP_NAME=VtourHubAdmin
+ARG APP_NAME=vtourhub-backend
 #使いたいrubyのimage名に置き換えてください
 ARG RUBY_IMAGE=ruby:3.1.2
 #使いたいnodeのversion
