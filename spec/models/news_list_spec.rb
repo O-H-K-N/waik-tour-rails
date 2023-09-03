@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: news_lists
+#
+#  id          :bigint           not null, primary key
+#  content     :text             not null
+#  content_ens :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe NewsList, type: :model do

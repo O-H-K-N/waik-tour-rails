@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: videos
+#
+#  id           :bigint           not null, primary key
+#  area         :string           not null
+#  published_at :datetime         not null
+#  spot         :string           not null
+#  thumbnail    :string           not null
+#  title        :string           not null
+#  view_count   :integer          not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  video_id     :string           not null
+#
 require 'rails_helper'
 
 RSpec.describe Video, type: :model do
