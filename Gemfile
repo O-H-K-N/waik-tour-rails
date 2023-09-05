@@ -37,6 +37,9 @@ gem 'net-pop'
 
 gem 'annotate'
 
+# S3erializers
+gem 'active_model_serializers'
+
 group :development, :test do
   #Debugger
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
