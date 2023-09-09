@@ -4,12 +4,12 @@ Rails.application.routes.draw do
       resources :countries, only: %i[index show] do
         resources :spots, only: %i[edit]
       end
-      resources :spots, only: %i[index]
-      resources :videos, only: %i[index]
+      resources :spots, only: %i[index] do
+        resources :videos, only: %i[index]
+      end
       resources :requests, only: %i[create]
       resources :news_lists, only: %i[index]
       resources :bookmarks, only: %i[index create destroy]
-      get '/set_country', to: 'countries#set_country'
       get '/bookmarked', to: 'bookmarks#bookmarked'
       post '/login', to: 'user_sessions#create'
       delete 'logout', to: 'user_sessions#destroy', as: :logout

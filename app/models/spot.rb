@@ -23,6 +23,8 @@
 class Spot < ApplicationRecord
   belongs_to :country
   has_many :bookmarks, dependent: :destroy
+  has_many :videos, dependent: :destroy
+
   validates :country_id, presence: true
   validates :name, presence: true
   validates :name, uniqueness: true
@@ -33,8 +35,12 @@ class Spot < ApplicationRecord
   validates :lng, presence: true
   validates :lng, uniqueness: true
 
-  # 3日以内に作成されたものか確認
-  def recently?
+  delegate :iso, to: :country
+
+  #
+  # 3日以内に更新されたか
+  #
+  def recently_updated?
     created_at > Time.current.days_ago(3)
   end
 end

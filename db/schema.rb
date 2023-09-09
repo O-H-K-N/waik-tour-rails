@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_09_031623) do
+ActiveRecord::Schema.define(version: 2023_09_09_111222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,8 +74,6 @@ ActiveRecord::Schema.define(version: 2022_08_09_031623) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string "area", null: false
-    t.string "spot", null: false
     t.string "video_id", null: false
     t.string "title", null: false
     t.string "thumbnail", null: false
@@ -83,10 +81,13 @@ ActiveRecord::Schema.define(version: 2022_08_09_031623) do
     t.integer "view_count", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "spot_id", null: false
+    t.index ["spot_id"], name: "index_videos_on_spot_id"
   end
 
   add_foreign_key "bookmarks", "spots"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "requests", "users"
   add_foreign_key "spots", "countries"
+  add_foreign_key "videos", "spots"
 end
