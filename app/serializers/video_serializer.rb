@@ -26,7 +26,8 @@ class VideoSerializer < ActiveModel::Serializer
              :title,
              :thumbnail,
              :view_count,
-             :published_at
+             :published_at,
+             :spot_id
 
   def published_at
     object.published_at.strftime("%Y/%m/%d")

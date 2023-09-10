@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :countries, only: %i[index show] do
-        resources :spots, only: %i[edit]
-      end
-      resources :spots, only: %i[index] do
+      resources :countries, only: %i[index show]
+      resources :spots, only: %i[index edit] do
         resources :videos, only: %i[index]
       end
       resources :requests, only: %i[create]

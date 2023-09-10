@@ -1,5 +1,5 @@
 class Api::V1::CountriesController < ApiController
-  before_action :find_country, only: [:show]
+  before_action :find_country, only: %i[show]
 
   def index
     countries = if type == 'all'

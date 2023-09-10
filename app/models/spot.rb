@@ -37,10 +37,5 @@ class Spot < ApplicationRecord
 
   delegate :iso, to: :country
 
-  #
-  # 3日以内に更新されたか
-  #
-  def recently_updated?
-    created_at > Time.current.days_ago(3)
-  end
+  scope :recent, -> { where('spots.created_at > ?', Time.current.days_ago(3)) }
 end
