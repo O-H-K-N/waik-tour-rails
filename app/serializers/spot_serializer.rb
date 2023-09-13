@@ -26,8 +26,15 @@ class SpotSerializer < ActiveModel::Serializer
   has_many :video, serializer: VideoSerializer do
     object.videos.order("RANDOM()").first
   end
+  attributes :is_bookmarked
 
   def area
     object.country
+  end
+
+  def is_bookmarked
+    return false if @instance_options[:current_user].nil?
+
+    @instance_options[:current_user].bookmark?(object)
   end
 end

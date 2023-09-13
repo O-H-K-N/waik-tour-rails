@@ -3,7 +3,16 @@ class Api::V1::SpotsController < ApiController
     render json: spots,
            root: 'spots',
            adapter: :json,
-           each_serializer: SpotSerializer
+           each_serializer: SpotSerializer,
+           current_user: current_user
+  end
+
+  def show
+    render json: spot,
+           root: 'spot',
+           adapter: :json,
+           serializer: SpotSerializer,
+           current_user: current_user
   end
 
   def edit
