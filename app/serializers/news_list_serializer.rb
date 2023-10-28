@@ -8,9 +8,11 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-class NewsList < ApplicationRecord
-  validates :content, presence: true
-  validates :content_ens, presence: true
-  validates :content, length: { in: 5..60 }, allow_blank: true
-  validates :content_ens, length: { in: 5..100 }, allow_blank: true
+class NewsListSerializer < ActiveModel::Serializer
+  attributes :id, :content, :content_ens
+  attributes :created_at
+
+  def created_at
+    object.created_at.strftime("%Y/%m/%d")
+  end
 end

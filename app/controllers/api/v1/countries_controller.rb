@@ -1,36 +1,32 @@
 class Api::V1::CountriesController < ApiController
-  # 地点登録されている国一覧を取得
+  before_action :find_country, only: %i[show]
+
   def index
-    iso = []
-    areas = []
-    all_areas = []
-    countries = Country.all
-    countries.each do |country|
-      # 地点を一つでも含んだ国のみを取得
-      if country.spots.present?
-        iso << country.iso.downcase
-        areas << country
-      end
-      # DB内にあるすべての国の名前を取得
-      all_areas << country
-    end
-    render json: {areas: areas, iso: iso, all_areas: all_areas }
+    countries = if type == 'all'
+                  Country.includes(:spots)
+                else
+                  Country.joins(:spots).distinct
+                end
+    render json: countries,
+           root: 'areas',
+           adapter: :json,
+           each_serializer: CountrySerializer
   end
 
-  # 国IDから国に関する地点情報を取得
   def show
-    country = Country.find(params[:id])
-    spots = country.spots
-
-    render json: spots.present? ? { area: country, spots: spots } : country
+    render json: @country,
+           root: 'area',
+           adapter: :json,
+           each_serializer: CountrySerializer
   end
 
-  # 国コード(iso)で判別し国を取得
-  def set_country
-    country = Country.find_by(iso: params[:iso])
-    spots = Spot.find_by(country_id: country.id)
+  private
 
-    # 地点登録されている国をjsonで返す
-    spots.present? ? ( render json: country ) : ( render json: country, status: :bad_request )
+  def find_country
+    @country = Country.find(params[:id])
+  end
+
+  def type
+    params[:type]
   end
 end

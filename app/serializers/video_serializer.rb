@@ -20,13 +20,16 @@
 #
 #  fk_rails_...  (spot_id => spots.id)
 #
-FactoryBot.define do
-  factory :video do
-    video_id { 'nZZalM5GbUE' }
-    title { 'Most Dangerous Neighborhood in Los Angeles? : Walking Compton' }
-    thumbnail { 'https://i.ytimg.com/vi/nZZalM5GbUE/mqdefault.jpg' }
-    published_at { DateTime.now }
-    view_count { 129669 }
-    spot
+class VideoSerializer < ActiveModel::Serializer
+  attributes :id,
+             :video_id,
+             :title,
+             :thumbnail,
+             :view_count,
+             :published_at,
+             :spot_id
+
+  def published_at
+    object.published_at.strftime("%Y/%m/%d")
   end
 end

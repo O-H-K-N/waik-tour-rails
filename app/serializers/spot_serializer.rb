@@ -20,12 +20,21 @@
 #
 #  fk_rails_...  (country_id => countries.id)
 #
-FactoryBot.define do
-  factory :spot do
-    name { 'ロサンゼルス' }
-    name_ens { 'Los Angeles' }
-    lat { '34.0194' }
-    lng { '-118.411' }
-    country
+class SpotSerializer < ActiveModel::Serializer
+  attributes :id, :name, :name_ens, :lat, :lng, :click_count
+  attributes :area
+  has_many :video, serializer: VideoSerializer do
+    object.videos.order("RANDOM()").first
+  end
+  attributes :is_bookmarked
+
+  def area
+    object.country
+  end
+
+  def is_bookmarked
+    return false if @instance_options[:current_user].nil?
+
+    @instance_options[:current_user].bookmark?(object)
   end
 end

@@ -1,39 +1,29 @@
 class Api::V1::BookmarksController < ApiController
-  # お気に入り登録した地点とその国、動画を返す
   def index
-    spots = []
-    areas = []
-    videos = []
-
-    current_user.bookmark_spots.each do |spot|
-      # videoを保有している地点のみ有効
-      if Video.where(spot: spot.name) != []
-        spots << spot
-        areas << spot.country
-        ramdam_data = Video.where(spot: spot.name).order("RANDOM()").first
-        videos << { video_id: ramdam_data.video_id, title: ramdam_data.title, thumbnail: ramdam_data.thumbnail, view_count: ramdam_data.view_count.to_s(:delimited), published_at: ramdam_data.published_at.strftime("%Y/%m/%d") }
-      end
-    end
-    render json: { spots: spots, areas: areas, videos: videos }
+    render json: spots,
+           root: 'spots',
+           adapter: :json,
+           each_serializer: SpotSerializer,
+           current_user: current_user
   end
 
   # お気に入り登録
   def create
-    spot = Spot.find(params[:spot_id])
     current_user.bookmark(spot)
-    render json: { status: 'ok' }
   end
 
   # お気に入り登録解除
   def destroy
-    spot = Spot.find(params[:id])
     current_user.unbookmark(spot)
-    render json: { status: 'ok' }
   end
 
-  # お気に入り登録されているかを確認
-  def bookmarked
-    spot = Spot.find(params[:spot_id])
-    render json: current_user.bookmark?(spot) ? { status: 'yes' } : { status: 'no' }
+  private
+
+  def spots
+    @spots ||= current_user.bookmark_spots
+  end
+
+  def spot
+    @spot ||= Spot.find(params[:id])
   end
 end
