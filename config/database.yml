@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: waik_tour_rails_production
-  username: waik_tour_rails
+  database: cloa9sl6c00lp9tp5b3ikc2zk
+  username: cloa9sl6b00ln9tp5gr9j79vp
   password: <%= ENV['WAIK_TOUR_RAILS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

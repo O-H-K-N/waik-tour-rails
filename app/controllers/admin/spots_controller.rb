@@ -4,7 +4,7 @@ class Admin::SpotsController < Admin::BaseController
   #一覧は検索機能とページネーションを実装
   def index
     @q = Spot.ransack(params[:q])
-    @spots = @q.result(distinct: true).includes(:country).order(created_at: :asc).page(params[:page]).per(30)
+    @spots = @q.result(distinct: true).includes(:country).order(created_at: :asc).page(params[:page]).per(15)
   end
 
   def show

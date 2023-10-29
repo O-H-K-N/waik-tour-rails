@@ -49,3 +49,4 @@ ja:
       news_list:
         created_at: お知らせ日
         content: 内容
+        content_ens: 内容(英語表記)

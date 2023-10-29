@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :countries, only: %i[index] do
-        resources :spots, only: %i[index edit]
+      resources :countries, only: %i[index show]
+      resources :spots, only: %i[index show edit] do
+        resources :videos, only: %i[index]
       end
       resources :requests, only: %i[create]
       resources :news_lists, only: %i[index]
       resources :bookmarks, only: %i[index create destroy]
-      get '/all_spot', to: 'spots#all_spot'
-      get '/set_country', to: 'countries#set_country'
-      get '/all_country', to: 'countries#all_country'
-      get '/many_video', to: 'videos#many_video'
-      get '/bookmarked', to: 'bookmarks#bookmarked'
       post '/login', to: 'user_sessions#create'
       delete 'logout', to: 'user_sessions#destroy', as: :logout
       post '/register', to: 'users#create'

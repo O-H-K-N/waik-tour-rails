@@ -44,7 +44,8 @@ class Admin::NewsListsController < Admin::BaseController
 
   def news_list_params
     params.require(:news_list).permit(
-      :content
+      :content,
+      :content_ens
     )
   end
 end

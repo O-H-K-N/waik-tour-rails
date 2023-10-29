@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
@@ -13,15 +13,6 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails'
 gem 'font-awesome-sass', '~> 5.11.2'
 gem 'jquery-rails'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -39,6 +30,16 @@ gem 'kaminari'
 gem 'rails-i18n'
 gem 'enum_help'
 
+gem 'rake'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
+
+gem 'annotate'
+
+# S3erializers
+gem 'active_model_serializers'
+
 group :development, :test do
   #Debugger
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -47,25 +48,21 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
 
-  # Test
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
-
   # Code analyse
   gem 'rubocop', require: false
   gem 'rubocop-rails', require:false
+
+  # rspec
+  gem 'capybara'
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem 'faker'
 end
 
 group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
-
-group :test do
-  gem 'capybara'
-  gem 'faker'
-  gem 'gimei'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
